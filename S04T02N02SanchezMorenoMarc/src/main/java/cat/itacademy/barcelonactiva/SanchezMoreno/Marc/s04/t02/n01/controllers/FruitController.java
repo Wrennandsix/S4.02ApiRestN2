@@ -48,11 +48,10 @@ public class FruitController {
 	}
 
 	@DeleteMapping("/fruita/delete/{id}")
-	public ResponseEntity<HttpStatus> deleteFruit(@PathVariable int id) {
+	public ResponseEntity<String> deleteFruit(@PathVariable int id) {
 		fruitService.deleteFruit(id);
 
-		return new ResponseEntity<>(HttpStatus.OK);
-
+		return new ResponseEntity<>("fruit with id:"+id+" succefully deleted",HttpStatus.OK);
 	}
 
 	@GetMapping("/fruita/getOne/{id}")
